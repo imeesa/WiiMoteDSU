@@ -22,7 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
         with:
-          token: ${{ secrets.API_GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           # default is '', i.e. commit that triggered this event
           ref: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.version != '' && format('refs/tags/v{0}', github.event.inputs.version) || ''}}
 
